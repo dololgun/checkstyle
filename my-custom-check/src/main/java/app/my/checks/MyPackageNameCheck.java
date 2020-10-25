@@ -8,8 +8,8 @@ public class MyPackageNameCheck extends AbstractCheck {
 
 	@Override
 	public int[] getDefaultTokens() {
-		System.out.println("my checkstyle ~~");
-		return new int[] { TokenTypes.PACKAGE_DEF };
+		System.out.println("my checkstyle ~~1");
+		return new int[] { TokenTypes.PACKAGE_DEF };  
 	}
 
 	@Override
@@ -25,7 +25,10 @@ public class MyPackageNameCheck extends AbstractCheck {
 	@Override
 	public void visitToken(DetailAST ast) {
 		DetailAST dotToken = ast.findFirstToken(TokenTypes.DOT);
-		System.out.println("you do not need your hands");
+		if (dotToken  != null) {
+			System.out.println("I found token : " + dotToken);			
+			log(dotToken, "my error");
+		}
 	}
 	
 	

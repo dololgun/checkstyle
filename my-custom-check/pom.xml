@@ -6,11 +6,11 @@
   <artifactId>checkstyle-custom</artifactId>
   <version>0.0.1-SNAPSHOT</version>
   <name>my custom check</name>
-  
+
   <properties>
     <project.build.sourceEncoding>US-ASCII</project.build.sourceEncoding>
-  </properties>  
-  
+  </properties>
+
   <build>
     <plugins>
       <plugin>

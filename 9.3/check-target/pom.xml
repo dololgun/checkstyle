@@ -1,0 +1,51 @@
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+  xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+  xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/xsd/maven-4.0.0.xsd">
+  <modelVersion>4.0.0</modelVersion>
+  <groupId>my.study.checkstyle</groupId>
+  <artifactId>check-target</artifactId>
+  <version>0.0.1-SNAPSHOT</version>
+  <name>check target</name>
+  <description>체크 대상 프로젝트</description>
+
+  <properties>
+    <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <maven.compiler.target>1.8</maven.compiler.target>
+    <maven.compiler.source>1.8</maven.compiler.source>
+  </properties>
+
+  <build>
+    <plugins>
+      <plugin>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-checkstyle-plugin</artifactId>
+        <version>3.1.2</version>
+        <dependencies>
+
+          <dependency>
+            <groupId>com.puppycrawl.tools</groupId>
+            <artifactId>checkstyle</artifactId>
+            <version>9.3</version>
+          </dependency>
+
+
+          <dependency>
+            <groupId>my.study.checkstyle</groupId>
+            <artifactId>custom-checker</artifactId>
+            <version>0.0.1-SNAPSHOT</version>
+          </dependency>
+        </dependencies>
+        <configuration>
+          <configLocation>my_check.xml</configLocation>
+        </configuration>
+        <!-- <configuration> -->
+        <!-- <configLocation>my_check.xml</configLocation> -->
+        <!-- <encoding>UTF-8</encoding> -->
+        <!-- <consoleOutput>true</consoleOutput> -->
+        <!-- <failsOnError>true</failsOnError> -->
+        <!-- </configuration> -->
+      </plugin>
+    </plugins>
+  </build>
+
+</project>
